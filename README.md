@@ -14,8 +14,6 @@ HTML and CSS have been used on this project, with media queries to create a resp
 
 Here are some screenshots of the app, to show layout in various screen sizes.
 
-_Note: Background color not showing properly in screenshots, but is correct in actual deployment on Github Pages_
-
 **Desktop**  
 <img src="./images/spots-desktop.png" alt="Spots app desktop" width="824" height="784">
 
