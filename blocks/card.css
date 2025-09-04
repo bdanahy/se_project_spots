@@ -12,18 +12,20 @@
 
 .card__content {
   display: flex;
-  align-items: baseline;
+  align-items: flex-end;
   justify-content: space-between;
+  margin: 12px 0 40px;
 }
 
 .card__title {
   font-size: 20px;
   margin: 0;
-  padding: 12px 0 2px;
+  /* padding: 12px 0 2px; */
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   line-height: 1.2;
+  max-width: auto;
 }
 
 .card__like-btn {
@@ -45,5 +47,9 @@
 @media screen and (max-width: 630px) {
   .card__image {
     height: 288px;
+  }
+
+  .card__content {
+    margin: 12px 0 0;
   }
 }
