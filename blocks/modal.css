@@ -32,10 +32,9 @@
   height: 40px;
   top: 32px;
   right: 50px;
-  background-image: url(../images/close-icon.svg);
+  background: url(../images/close-icon.svg) center/contain no-repeat;
   opacity: 40%;
   border: none;
-  background-color: #fff;
   cursor: pointer;
   padding: 0;
 }
