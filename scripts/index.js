@@ -45,6 +45,11 @@ const newPostFormElement = newPostModal.querySelector(".modal__form");
 const newPostNameInput = newPostModal.querySelector("#card-caption-input");
 const newPostLinkInput = newPostModal.querySelector("#card-image-input");
 
+//open new post modal
+newPostBtn.addEventListener("click", function () {
+  newPostModal.classList.add("modal_is-opened");
+});
+
 //submit new post
 function handleNewPostSubmit(evt) {
   evt.preventDefault();
@@ -53,11 +58,6 @@ function handleNewPostSubmit(evt) {
 }
 
 newPostFormElement.addEventListener("submit", handleNewPostSubmit);
-
-//open new post modal
-newPostBtn.addEventListener("click", function () {
-  newPostModal.classList.add("modal_is-opened");
-});
 
 //close new post modal
 newPostCloseBtn.addEventListener("click", function () {

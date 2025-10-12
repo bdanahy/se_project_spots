@@ -4,7 +4,7 @@
 
 Spots is an app for sharing photos on your own personal profile.
 
-HTML and CSS have been used on this project, with media queries to create a responsive layout on all screen sizes.
+HTML, CSS, and JS have been used on this project, the purpose of which was to use media queries to learn how to create a responsive layout on all screen sizes, as well as query selectors and event listeners to become familiar with Javascript functionality.
 
 ### Images
 
