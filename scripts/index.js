@@ -25,15 +25,6 @@ const initialCards = [
   },
 ];
 
-// Utility functions
-function openModal(modalElement) {
-  modalElement.classList.add("modal_is-opened");
-}
-
-function closeModal(modalElement) {
-  modalElement.classList.remove("modal_is-opened");
-}
-
 // select edit profile modal and elements
 const profileEditBtn = document.querySelector(".profile__edit-btn");
 const profileEditModal = document.querySelector("#edit-profile-modal");
@@ -50,6 +41,30 @@ const profileNameElement = document.querySelector(".profile__name");
 const profileDescriptionElement = document.querySelector(
   ".profile__description"
 );
+
+const cardTemplate = document.querySelector("#card-template");
+const cardsList = document.querySelector(".cards__list");
+
+function getCardElement(data) {
+  const cardElement = cardTemplate.content.querySelector(".card").cloneNode(true);
+  const cardTitleElement = cardElement.querySelector(".card__title");
+  const cardImageElement = cardElement.querySelector(".card__image");
+
+  cardImageElement.src = data.link;
+  cardImageElement.alt = data.name;
+  cardTitleElement.textContent = data.name;
+
+  return cardElement;
+}
+
+// Utility functions
+function openModal(modalElement) {
+  modalElement.classList.add("modal_is-opened");
+}
+
+function closeModal(modalElement) {
+  modalElement.classList.remove("modal_is-opened");
+}
 
 // open edit profile modal
 profileEditBtn.addEventListener("click", function () {
@@ -101,5 +116,6 @@ newPostCloseBtn.addEventListener("click", function () {
 });
 
 initialCards.forEach(function (item) {
-  console.log(item.name);
+  const cardElement = getCardElement(item);
+  cardsList.append(cardElement);
 });
