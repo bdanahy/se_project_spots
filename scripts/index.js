@@ -46,13 +46,20 @@ const cardTemplate = document.querySelector("#card-template");
 const cardsList = document.querySelector(".cards__list");
 
 function getCardElement(data) {
-  const cardElement = cardTemplate.content.querySelector(".card").cloneNode(true);
+  const cardElement = cardTemplate.content
+    .querySelector(".card")
+    .cloneNode(true);
   const cardTitleElement = cardElement.querySelector(".card__title");
   const cardImageElement = cardElement.querySelector(".card__image");
 
   cardImageElement.src = data.link;
   cardImageElement.alt = data.name;
   cardTitleElement.textContent = data.name;
+
+  const cardLikeBtnElement = cardElement.querySelector(".card__like-btn");
+  cardLikeBtnElement.addEventListener("click", () => {
+    cardLikeBtnElement.classList.toggle("card__like-btn_active");
+  });
 
   return cardElement;
 }
@@ -99,7 +106,12 @@ const newPostLinkInput = newPostModal.querySelector("#card-image-input");
 // submit new post
 function handleNewPostSubmit(evt) {
   evt.preventDefault();
-  console.log(newPostNameInput.value, newPostLinkInput.value);
+  const inputValues = {
+    name: newPostNameInput.value,
+    link: newPostLinkInput.value,
+  };
+  const cardElement = getCardElement(inputValues);
+  cardsList.prepend(cardElement);
   closeModal(newPostModal);
 }
 
@@ -115,6 +127,7 @@ newPostCloseBtn.addEventListener("click", function () {
   closeModal(newPostModal);
 });
 
+// add initial cards
 initialCards.forEach(function (item) {
   const cardElement = getCardElement(item);
   cardsList.append(cardElement);
