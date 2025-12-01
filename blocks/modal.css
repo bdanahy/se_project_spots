@@ -29,6 +29,7 @@
   position: relative;
   padding: 32px 50px;
   box-sizing: border-box;
+  overflow: visible;
 }
 
 .modal__close-btn {
@@ -38,14 +39,14 @@
   top: 32px;
   right: 50px;
   background: url(../images/close-icon.svg) center/contain no-repeat;
-  opacity: 40%;
+  opacity: 0.4;
   border: none;
   cursor: pointer;
   padding: 0;
 }
 
 .modal__close-btn:hover {
-  opacity: 100%;
+  opacity: 1;
 }
 
 .modal__close-btn_type_preview {
@@ -116,7 +117,7 @@
 }
 
 .modal__submit-btn:hover {
-  opacity: 80%;
+  opacity: 0.8;
 }
 
 .modal__image-container {
@@ -187,7 +188,31 @@
     width: 100%;
   }
 
-  .modal__image {
+  .modal__caption {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .modal {
+    padding: 0; /* no horizontal crushing */
+  }
+
+  .modal__container {
+    min-width: 288px;
+    width: 100%;
+    padding: 12px 8px;
+    box-sizing: border-box;
+  }
+
+  .modal__close-btn_type_preview {
+    right: 0px;
+  }
+
+  .modal__image,
+  .modal__image-container {
+    max-width: 288px; /* forces the real minimum */
+    width: 100%;
     min-width: 288px;
   }
 }

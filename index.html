@@ -53,7 +53,7 @@
               <li class="card">
                 <button
                   type="button"
-                  class="card__del-btn"
+                  class="card__delete-btn"
                   aria-label="Delete card"
                 ></button>
                 <img src="#" alt="" class="card__image" />
@@ -71,7 +71,9 @@
         </section>
       </main>
       <footer class="footer">
-        <p class="footer__copyright">2025 &copy; Spots</p>
+        <div class="page__section">
+          <p class="footer__copyright">2025 &copy; Spots</p>
+        </div>
       </footer>
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
@@ -112,6 +114,7 @@
                 type="url"
                 class="modal__input"
                 placeholder="Paste a link to the picture"
+                required
               />
             </label>
             <label for="card-caption-input" class="modal__label">
@@ -121,6 +124,7 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type your caption"
+                required
               />
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
@@ -136,7 +140,7 @@
           ></button>
           <img class="modal__image" src="#" alt="" />
           <div class="modal__caption-bg">
-            <p class="modal__caption">Golden Gate Bridge</p>
+            <p class="modal__caption"></p>
           </div>
         </div>
       </div>

@@ -90,9 +90,9 @@ function getCardElement(data) {
     cardLikeBtnElement.classList.toggle("card__like-btn_active");
   });
 
-  const cardDelBtnElement = cardElement.querySelector(".card__del-btn");
-  cardDelBtnElement.addEventListener("click", () => {
-    cardDelBtnElement.closest(".card").remove();
+  const cardDeleteBtnElement = cardElement.querySelector(".card__delete-btn");
+  cardDeleteBtnElement.addEventListener("click", () => {
+    cardDeleteBtnElement.closest(".card").remove();
   });
 
   return cardElement;
@@ -143,6 +143,7 @@ function handleNewPostSubmit(evt) {
   };
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
+  evt.target.reset();
   closeModal(newPostModal);
 }
 
